@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="./../src/form.js"></script>
+</head>
+<body>
+    
+    <form action="#" method="post" id="task-form">
+        <ul>
+            <li>
+                <label for="task-name">Task</label>
+                <input type="text" id="task-name" name="task-name" required>
+            </li>
+            <li>
+                <label for="task-desc">Description</label>
+                <input type="text" id="task-desc" name="task-desc">
+            </li>
+            <li>
+                <label for="due-date">Due Date</label>
+                <div class="date-picker">
+                    <input type="number" id="due-day" min="1" max="31" placeholder="DD">
+                    <input type="number" id="due-month" min="1" max="12" placeholder="MM">
+                    <input type="number" id="due-year" min="2023" max="2025" placeholder="YYYY">
+                </div>
+            </li>
+            <li>
+                <label for="task-priority">Priority</label>
+                <input id="task-priority" name="task-priority" type="range" min="1" max="4" step="1">
+            </li>
+            <li>
+                <button type="submit" id="task">Submit</button>
+            </li>
+        </ul>
+    </form>
+
+</body>
+</html>
