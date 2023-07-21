@@ -1,8 +1,11 @@
 import Project from './project.js';
 
 export default class ProjectList {
+    projectList;
 
-    projectList = [];
+    constructor(){
+        this.projectList = [];
+    }
 
     getProjectList = ()=>{
         return projectList;
