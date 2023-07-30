@@ -1,5 +1,24 @@
-import ProjectList from "./index.js";
+export const displayProjects = (projectList)=>{
 
-const screen = new ProjectList();
+    projectList.getProjectList.forEach(element => {
+        Project(element);
+    });
+}
 
-console.log(screen.getProjectList())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

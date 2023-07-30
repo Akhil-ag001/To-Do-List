@@ -5,41 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="./../src/style.css">
-    <!-- <script src="./main.js"></script> -->
 </head>
 <body>
 
     <div id="content">
 
-        <div id="topbar">
-            <div class="logo">To-Do-List</div>
-            <div class="current-section">DashBoard</div>
-        </div>
+
+
         <div id="sidebar">
-            <ul class="options">
-                <li class="profile">
+            <ul class="nav-options">
+                <li class="option" id="logo">To-Do-List</li>
+                <li class="option" id="profile">
                     <img src="./../src/Assets/Images/profile1.jpg" alt="Profile" class="profile-image">
                     Akhil Agarwal</li>
-                <li class="option" id="home">
-                    <!-- <img src="./../src/Assets/Images/home.svg" alt="Home" class="icon"> -->
-                    DashBoard
-                </li>
-                <li class="option" id="projects">
-                    <!-- <img src="./../src/Assets/Images/projects.svg" alt="Projects" class="icon"> -->
-                    Projects
-                </li>
-                <li class="option" id="notes">
-                    <!-- <img src="./../src/Assets/Images/notes.svg" alt="Notes" class="icon"> -->
-                    Notes
-                </li>
+                <li class="option" id="home">DashBoard</li>
+                <li class="option" id="projects">Projects</li>
+                <li class="option" id="notes">Notes</li>
+            </ul>
+            <ul class="create-options">
+                <li class="option create" id="create-note">Add new Note</li>
+                <li class="option create" id="create-project">Add new Project</li>
             </ul>
         </div>
 
 
         <div id="main-content">
 
-
-            <div class="new-options">
+            <div id="current-section">DashBoard</div>
+            <!-- <div class="new-options">
                 <div class="title">New Options</div>
                 <ul>
                     <li>
@@ -49,29 +42,121 @@
                         <img src="./../src/Assets/Images/new-note.svg" alt="New Note" class="new-option">
                     </li>
                 </ul>
+            </div> -->
+
+
+            <div id="recent-projects">
+                <div class="title">
+                    Recent Projects
+                </div>
+                <ul>
+                    <li class="recent-project project" id="project-1">
+                        <div class="first-div">
+                            <div class="name">Milap</div>
+                            <div class="priority Urgent">Urgent</div>
+                        </div>
+                        <div class="progress-bar">
+                            <progress value="60" max="120"></progress>
+                            12 / 24
+                        </div>
+                        <div class="due-date">
+                            <img src="./../src/Assets/Images/calendar.svg" alt="calendar" class="icon">
+                            <div>22 / 07 / 2024</div>
+                        </div>
+                        <div class="edit-options">
+                            <img src="./../src/Assets/Images/check-circle.svg" alt="Mark" id="edit-option-check" class="icon">
+                            <img src="./../src/Assets/Images/trash-can.svg" alt="Delete" id="edit-option-delete" class="icon">
+                        </div>
+                    </li>
+                    <li class="recent-project project">
+                        <div class="first-div">
+                            <div class="name">Milap</div>
+                            <div class="priority Medium">Medium</div>
+                        </div>
+                        <div class="progress-bar">
+                            <progress value="60" max="120"></progress>
+                            12 / 24
+                        </div>
+                        <div class="due-date">
+                            <img src="./../src/Assets/Images/calendar.svg" alt="calendar" class="icon">
+                            <div>22 / 07 / 2024</div>
+                        </div>
+                        <div class="edit-options">
+                            <img src="./../src/Assets/Images/check-circle.svg" alt="Mark" id="edit-option-check" class="icon">
+                            <img src="./../src/Assets/Images/trash-can.svg" alt="Delete" id="edit-option-delete" class="icon">
+                        </div>
+                    </li>
+                    <li class="recent-project project">
+                        <div class="first-div">
+                            <div class="name">Milap</div>
+                            <div class="priority Low">Low</div>
+                        </div>
+                        <div class="progress-bar">
+                            <progress value="60" max="120"></progress>
+                            12 / 24
+                        </div>
+                        <div class="due-date">
+                            <img src="./../src/Assets/Images/calendar.svg" alt="calendar" class="icon">
+                            <div>22 / 07 / 2024</div>
+                        </div>
+                        <div class="edit-options">
+                            <img src="./../src/Assets/Images/check-circle.svg" alt="Mark" id="edit-option-check" class="icon">
+                            <img src="./../src/Assets/Images/trash-can.svg" alt="Delete" id="edit-option-delete" class="icon">
+                        </div>
+                    </li>
+                    <li class="recent-project project">
+                        <div class="first-div">
+                            <div class="name">Milap</div>
+                            <div class="priority Medium">Medium</div>
+                        </div>
+                        <div class="progress-bar">
+                            <progress value="60" max="120"></progress>
+                            12 / 24
+                        </div>
+                        <div class="due-date">
+                            <img src="./../src/Assets/Images/calendar.svg" alt="calendar" class="icon">
+                            <div>22 / 07 / 2024</div>
+                        </div>
+                        <div class="edit-options">
+                            <img src="./../src/Assets/Images/check-circle.svg" alt="Mark" id="edit-option-check" class="icon">
+                            <img src="./../src/Assets/Images/trash-can.svg" alt="Delete" id="edit-option-delete" class="icon">
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="recent-projects">
-                <div class="title">Recents</div>
+
+            <div id="recent-notes">
+                <div class="title">Recent Notes</div>
                 <ul>
                     <li class="recent-project note">
-                        <div>Project1</div>
-                    </li>
-                    <li class="recent-project project">
-                        <div>Project2</div>
-                    </li>
-                    <li class="recent-project project">
-                        <div>Project3</div>
+                        <div class="first-div">
+                            <div class="name">Milap</div>
+                            <div class="priority">Urgent</div>
+                        </div>
+                        <div class="description">Make shit cool between Japan and Russia</div>
+                        <div class="due-date">
+                            <img src="./../src/Assets/Images/calendar-white.svg" alt="calendar" class="icon">
+                            <div>22 / 07 / 2024</div>
+                        </div>
+                        <div class="edit-options">
+                            <img src="./../src/Assets/Images/check-circle-white.svg" alt="Mark" id="edit-option-check" class="icon">
+                            <img src="./../src/Assets/Images/trash-can-white.svg" alt="Delete" id="edit-option-delete" class="icon">
+                        </div>
                     </li>
                     <li class="recent-project note">
-                        <div>Project4</div>
+                        <div>Note 2</div>
+                    </li>
+                    <li class="recent-project note">
+                        <div>Note 3</div>
+                    </li>
+                    <li class="recent-project note">
+                        <div>Note 4</div>
                     </li>
                 </ul>
             </div>
 
 
-
-
-            <div class="all-projects">
+            <div id="all-projects">
                 <div class="title">Projects</div>
                 <ul>
                     <li class="project">
@@ -105,7 +190,7 @@
             </div>
 
 
-            <div class="all-notes">
+            <div id="all-notes">
                 <div class="title">Notes</div>
                 <ul>
                     <li class="note">
@@ -129,9 +214,68 @@
                 </ul>
             </div>
 
+            <div id="current-project">
+                
+            </div>
 
 
+            
+        
         </div>
+
+
+
+        
+
+    </div>
+
+
+
+    <div id="create-forms" class="temporary">
+        <div class="hidden" id="new-task-form">
+            <form action="#" method="post" id="task-form">
+                <ul class="new-task-list">
+                    <li>
+                        <label for="task-name">Task</label>
+                        <input type="text" id="task-name" name="task-name" required>
+                    </li>
+                    <li>
+                        <label for="task-desc">Description</label>
+                        <textarea name="task-desc" id="task-desc" cols="30" rows="3" required></textarea>
+                    </li>
+                    <li>
+                        <label for="due-date">Due Date</label>
+                        <div class="date-picker">
+                            <input type="number" id="due-day" min="1" max="31" placeholder="DD" required>
+                            <input type="number" id="due-month" min="1" max="12" placeholder="MM" required>
+                            <input type="number" id="due-year" min="2023" max="2025" placeholder="YYYY" required>
+                        </div>
+                    </li>
+                    <li>
+                        <label>Priority</label>
+                        <ul class="priority-options">
+                            <li>
+                                <input type="radio" name="priority" id="low" value="Low" required>
+                                <label for="low">Low</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="priority" id="medium" value="Medium">
+                                <label for="low">Medium</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="priority" id="urgent" value="Urgent">
+                                <label for="low">Urgent</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="buttons">
+                        <button type="button" id="task-cancel">Cancel</button>
+                        <button type="submit" id="task-submit">Submit</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
     </div>
 
 
@@ -154,38 +298,13 @@
 
 
 
+    <script src="./main.js"></script>
+<!--     
 
-
-
-
-    
-    <form action="#" method="post" id="task-form" style="display: none;">
-        <ul>
-            <li>
-                <label for="task-name">Task</label>
-                <input type="text" id="task-name" name="task-name" required>
-            </li>
-            <li>
-                <label for="task-desc">Description</label>
-                <input type="text" id="task-desc" name="task-desc">
-            </li>
-            <li>
-                <label for="due-date">Due Date</label>
-                <div class="date-picker">
-                    <input type="number" id="due-day" min="1" max="31" placeholder="DD">
-                    <input type="number" id="due-month" min="1" max="12" placeholder="MM">
-                    <input type="number" id="due-year" min="2023" max="2025" placeholder="YYYY">
-                </div>
-            </li>
-            <li>
-                <label for="task-priority">Priority</label>
-                <input id="task-priority" name="task-priority" type="range" min="1" max="4" step="1">
-            </li>
-            <li>
-                <button type="submit" id="task">Submit</button>
-            </li>
-        </ul>
-    </form>
+    <script type="module" src="./../src/DOMstuff.js"></script>
+    <script type="module" src="./../src/form.js"></script>  
+    <script type="module" src="./../src/index.js"></script>
+    <script type="module" src="./../src/new_project.js"></script> -->
 
 </body>
 </html>
