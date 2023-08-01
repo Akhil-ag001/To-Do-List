@@ -1,6 +1,6 @@
 import Project from './project.js';
 import activeProject from './active_project.js';
-import { createTask,createProject, checkDate } from "./form.js";
+import { createTask, createProject, checkDate } from "./form.js";
 import Task from "./task.js";
 import ProjectList from './project_List.js';
 
@@ -13,8 +13,8 @@ import ProjectList from './project_List.js';
 const projects = document.getElementById("projects");
 const notes = document.getElementById("notes");
 const dashboard = document.getElementById("home");
-const createNote = document.getElementById("create-note");
-const createProject = document.getElementById("create-project");
+const createNoteBtn = document.getElementById("create-note");
+const createProjectBtn = document.getElementById("create-project");
 const taskCancel = document.getElementById("task-cancel");
 const taskSubmit = document.getElementById("task-submit");
 
@@ -34,8 +34,8 @@ const updateScreenDashboard = ()=>{
     recentNotes.classList.remove("hidden");
     allProjects.classList.add("hidden");
     allNotes.classList.add("hidden");
-    createNote.classList.remove("hidden");
-    createProject.classList.remove("hidden");
+    createNoteBtn.classList.remove("hidden");
+    createProjectBtn.classList.remove("hidden");
 
     displayRecentProjects();
     dispalyRecentNotes();
@@ -46,8 +46,8 @@ const updateScreenProjects = ()=>{
     recentNotes.classList.add("hidden");
     allProjects.classList.remove("hidden");
     allNotes.classList.add("hidden");
-    createNote.classList.add("hidden");
-    createProject.classList.remove("hidden");
+    createNoteBtn.classList.add("hidden");
+    createProjectBtn.classList.remove("hidden");
 
     displayProjects(projectList);
 }
@@ -57,8 +57,8 @@ const updateScreenNotes = ()=>{
     recentNotes.classList.add("hidden");
     allProjects.classList.add("hidden");
     allNotes.classList.remove("hidden");
-    createNote.classList.remove("hidden");
-    createProject.classList.add("hidden");
+    createNoteBtn.classList.remove("hidden");
+    createProjectBtn.classList.add("hidden");
 
     displayNotes(noteList);
 }
@@ -69,7 +69,7 @@ projects.addEventListener("click", updateScreenProjects)
 
 notes.addEventListener("click", updateScreenNotes)
 
-createNote.addEventListener("click", ()=>{
+createNoteBtn.addEventListener("click", ()=>{
 
     submit = "note";
 
@@ -80,7 +80,7 @@ createNote.addEventListener("click", ()=>{
     notes.removeEventListener("click", updateScreenNotes);
 })
 
-createProject.addEventListener("click", ()=>{
+createProjectBtn.addEventListener("click", ()=>{
 
     submit = "project";
 

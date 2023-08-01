@@ -1,13 +1,13 @@
 
 export default class Project {
-    name;
+    title;
     description;
     dueDate;
     priority;
     count;
     
-    constructor (name, description, dueDate, priority){
-        this.name = name;
+    constructor (title, description, dueDate, priority){
+        this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
@@ -33,41 +33,34 @@ export default class Project {
         return this.count;
     }
 
-    htmlProject(Project){
+    htmlProject(){
 
         let div = document.createElement("div");
-        // div.classList.add("active-project");
         div.classList.add("project");
+        div.id = this.title;
     
         let firstDiv = document.createElement("div");
         firstDiv.classList.add("first-div");
         let firstDiv1 = document.createElement("div");
         firstDiv1.classList.add("name");
-        firstDiv1.textContent = Project.name;
+        firstDiv1.textContent = this.title;
     
         let firstDiv2 = document.createElement("div");
-        firstDiv2.classList.add("priority");
-        firstDiv2.classList.add(Project.priority);
-        firstDiv2.textContent = Project.priority;
+        firstDiv2.classList.add(["priority", this.priority]);
+        firstDiv2.textContent = this.priority;
     
         firstDiv.appendChild(firstDiv1);
         firstDiv.appendChild(firstDiv2);
         div.appendChild(firstDiv);
     
-        // let secondDiv = document.createElement("div");
-        // secondDiv.classList.add("notes");
-        // secondDiv.textContent = Project.description;
-    
-        // div.appendChild(secondDiv);
-    
         let thirdDiv = document.createElement("div");
         thirdDiv.classList.add("progress-bar");
         let thirdDiv1 = document.createElement("progress");
-        thirdDiv1.setAttribute("value", Project.countComplete());
-        thirdDiv1.setAttribute("max", Project.taskList.length);
+        thirdDiv1.setAttribute("value", this.countComplete());
+        thirdDiv1.setAttribute("max", this.taskList.length);
     
         thirdDiv.appendChild(thirdDiv1);
-        let thirdDiv2 = document.createTextNode("\u00A0" + Project.countComplete() + " / " + Project.taskList.length);
+        let thirdDiv2 = document.createTextNode("\u00A0" + this.countComplete() + " / " + this.taskList.length);
         thirdDiv.appendChild(thirdDiv2);
     
         div.appendChild(thirdDiv);
@@ -80,23 +73,44 @@ export default class Project {
         fourthDiv1.classList.add("icon");
     
         let fourthDiv2 = document.createElement("div");
-        fourthDiv2.textContent = Project.dueDate;
-    
-        let fifthDiv = document.createElement
-        
+        fourthDiv2.textContent = this.dueDate;
 
-        let fourthDiv3 = document.createElement("img");
-        fourthDiv3.src = trashCan;
-        fourthDiv3.classList.add("icon");
-        fourthDiv3.id = "edit-option-delete"
-    
         fourthDiv.appendChild(fourthDiv1);
         fourthDiv.appendChild(fourthDiv2);
-        fourthDiv.appendChild(fourthDiv3);
     
         div.appendChild(fourthDiv);
+    
+        let fifthDiv = document.createElement("div");
+        fifthDiv.classList.add("edit-options");
+
+        let fifthDiv1 = document.createElement("img");
+        fifthDiv1.src = checkBlankCircle;
+        fifthDiv1.id = "edit-option-check";
+        fifthDiv1.classList.add("icon");
+
+        let fifthDiv2 = document.createElement("img");
+        fifthDiv2.src = trashCan;
+        fifthDiv1.id = "edit-option-delete";
+        fifthDiv1.classList.add("icon");
+
+        fifthDiv.appendChild(fifthDiv1);
+        fifthDiv.appendChild(fifthDiv2);
+        div.appendChild(fifthDiv);
     
         return div;
     }
 
+    htmlActiveProject(){
+
+        let div = this.htmlProject;
+        div.classList.add("active-project");
+
+        refNode = document.querySelector("#" + this.title + ">.progress-bar");
+
+        let secondDiv = document.createElement("div");
+        secondDiv.classList.add("notes");
+        secondDiv.textContent = Project.description;
+
+        div.insertBefore(secondDiv, refNode);
+    }
 }
